@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://danzunzhe.github.io/posts/cnn/</loc>
-    <lastmod>2020-11-19T22:14:46+08:00</lastmod>
+    <loc>https://danzunzhe.github.io/</loc>
+    <lastmod>2020-11-20T21:27:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://danzunzhe.github.io/</loc>
+    <loc>https://danzunzhe.github.io/eeg/test/</loc>
+    <lastmod>2020-11-20T21:27:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://danzunzhe.github.io/eeg/</loc>
+    <lastmod>2020-11-20T21:27:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://danzunzhe.github.io/c&#43;&#43;/test/</loc>
+    <lastmod>2020-11-20T20:30:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://danzunzhe.github.io/c&#43;&#43;/</loc>
+    <lastmod>2020-11-20T20:30:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://danzunzhe.github.io/python/test/</loc>
+    <lastmod>2020-11-20T20:30:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://danzunzhe.github.io/python/</loc>
+    <lastmod>2020-11-20T20:30:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://danzunzhe.github.io/posts/cnn/</loc>
     <lastmod>2020-11-19T22:14:46+08:00</lastmod>
   </url>
   
@@ -28,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://danzunzhe.github.io/posts/post-with-featured-image/</loc>
+    <loc>https://danzunzhe.github.io/posts/lstm/</loc>
     <lastmod>2020-11-19T16:15:09+08:00</lastmod>
   </url>
   
@@ -38,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://danzunzhe.github.io/posts/the-figure-shortcode/</loc>
+    <loc>https://danzunzhe.github.io/posts/bp/</loc>
     <lastmod>2020-11-19T12:29:41+08:00</lastmod>
   </url>
   
@@ -48,63 +78,18 @@
   </url>
   
   <url>
-    <loc>https://danzunzhe.github.io/posts/typography/</loc>
+    <loc>https://danzunzhe.github.io/posts/%E4%BA%A4%E5%8F%89%E7%86%B5%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2020-11-19T11:36:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://danzunzhe.github.io/posts/creating-a-new-theme/</loc>
+    <loc>https://danzunzhe.github.io/posts/rnn/</loc>
     <lastmod>2020-11-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://danzunzhe.github.io/about-hugo/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/posts/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/posts/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://danzunzhe.github.io/posts/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

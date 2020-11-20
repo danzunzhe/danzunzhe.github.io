@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EEGs on Danzunzhe</title>
+    <link>https://danzunzhe.github.io/eeg/</link>
+    <description>Recent content in EEGs on Danzunzhe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 20 Nov 2020 21:27:31 +0800</lastBuildDate><atom:link href="https://danzunzhe.github.io/eeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EEG</title>
+      <link>https://danzunzhe.github.io/eeg/test/</link>
+      <pubDate>Fri, 20 Nov 2020 21:27:31 +0800</pubDate>
+      
+      <guid>https://danzunzhe.github.io/eeg/test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
