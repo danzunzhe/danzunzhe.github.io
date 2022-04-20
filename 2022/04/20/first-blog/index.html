@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="4.17周报文献阅读概述神经网络底层通过推理引擎构建算子并加速并行计算的效率,，目前主流框架的缺点主要包括：  模型兼容性：Tensorflow,Pytorch,Caffe,CNTK,MXNet等模型和算子间不兼容，扩展性较差。   设备兼容性：不同研究方向采用设备平台差异性较大。统计学习采用单核多线程CPU，数据挖掘平台和深度强化学习依赖多GPU、NPU、TPU分布式并行训练。硬件架构包括ARM">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/danzunzhe/sourcepage/image-20220416153252693.png">
+<meta property="og:image" content="https://github.com/danzunzhe/sourcepage/blob/master/image-20220416153252693.png">
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416162805360.png">
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416163248391.png">
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416164035072.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416173031136.png">
 <meta property="og:image" content="e:/Master/组会/周报/Data%201.png">
 <meta property="article:published_time" content="2022-04-20T08:01:41.000Z">
-<meta property="article:modified_time" content="2022-04-20T08:26:15.198Z">
+<meta property="article:modified_time" content="2022-04-20T08:39:12.443Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/danzunzhe/sourcepage/image-20220416153252693.png">
+<meta name="twitter:image" content="https://github.com/danzunzhe/sourcepage/blob/master/image-20220416153252693.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -115,7 +115,7 @@
 <li><font face="宋体">资源调度：围绕核心算法分配线程和进程，互斥锁和消息队列间的任务窃取还存在优化空间，调度优化可提升计算性能，同时降低模型时间复杂度和空间复杂度。</font></li>
 </ul>
 <p><font face="宋体">基于此，阿里云提出了</font><font face="Times New Roman">MNN</font><font face="宋体">架构加速引擎推理和端侧部署效率</font></p>
-<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="https://github.com/danzunzhe/sourcepage/image-20220416153252693.png" alt="image-20220416153252693"></p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="https://github.com/danzunzhe/sourcepage/blob/master/image-20220416153252693.png" alt="image-20220416153252693"></p>
 <p><font face="宋体">上图为</font><font face="Times New Roman">MNN</font><font face="宋体">的架构，分为离线和在线的部分。离线部分将模型剪枝、压缩和量化后转出</font><font face="Times New Roman">mnn</font><font face="宋体">文件。在线推理分为：预推理，</font><font face="Times New Roman">kernel</font></p>
 <p><font face="宋体">优化和后端抽象。每个算子做推理时结合多算子和后端信息做成本评估，从方案池中找出最优方案。针对每个方案进行</font><font face="Times New Roman">kernet</font></p>
 <p><font face="宋体">级别的优化。加入</font><font face="Times New Roman">SIMD</font><font face="宋体">。后端抽象后就可以支持各类后端。</font></p>
@@ -174,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/20/first-blog/" data-id="cl27biig0000008vhcs9jao38" data-title="周报" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/first-blog/" data-id="cl27bqabf00017gvh8d1afdli" data-title="周报" class="article-share-link">Share</a>
       
       
       
