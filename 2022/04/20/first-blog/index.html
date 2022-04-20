@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>周报 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="4.17周报文献阅读概述神经网络底层通过推理引擎构建算子并加速并行计算的效率,，目前主流框架的缺点主要包括：  模型兼容性：Tensorflow,Pytorch,Caffe,CNTK,MXNet等模型和算子间不兼容，扩展性较差。   设备兼容性：不同研究方向采用设备平台差异性较大。统计学习采用单核多线程CPU，数据挖掘平台和深度强化学习依赖多GPU、NPU、TPU分布式并行训练。硬件架构包括ARM">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="4.17周报文献阅读概述神经网络底层通过推理引擎构建算子并加速并行计算的效率,，目前主流框架的缺点主要包括：  模型兼容性：Tensorflow,Pytorch,Caffe,CNTK,MXNet等模型和算子间不兼容，扩展性较差。   设备兼容性：不同研究方向采用设备平台差异性较大。统计学习采用单核多线程CPU，数据挖掘平台和深度强化学习依赖多GPU、NPU、TPU分布式并行训练。硬件架构包括ARM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="周报">
 <meta property="og:url" content="http://example.com/2022/04/20/first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="4.17周报文献阅读概述神经网络底层通过推理引擎构建算子并加速并行计算的效率,，目前主流框架的缺点主要包括：  模型兼容性：Tensorflow,Pytorch,Caffe,CNTK,MXNet等模型和算子间不兼容，扩展性较差。   设备兼容性：不同研究方向采用设备平台差异性较大。统计学习采用单核多线程CPU，数据挖掘平台和深度强化学习依赖多GPU、NPU、TPU分布式并行训练。硬件架构包括ARM">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/danzunzhe/sourcepage/blob/master/image-20220416153252693.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/danzunzhe/sourcepage/master/image-20220416153252693.png">
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416162805360.png">
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416163248391.png">
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416164035072.png">
@@ -24,88 +38,183 @@
 <meta property="og:image" content="c:/Users/72853/AppData/Roaming/Typora/typora-user-images/image-20220416173031136.png">
 <meta property="og:image" content="e:/Master/组会/周报/Data%201.png">
 <meta property="article:published_time" content="2022-04-20T08:01:41.000Z">
-<meta property="article:modified_time" content="2022-04-20T08:39:12.443Z">
+<meta property="article:modified_time" content="2022-04-20T08:56:24.259Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/danzunzhe/sourcepage/blob/master/image-20220416153252693.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/danzunzhe/sourcepage/master/image-20220416153252693.png">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="canonical" href="http://example.com/2022/04/20/first-blog/">
 
-  
-<meta name="generator" content="Hexo 6.1.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/04/20/first-blog/","path":"2022/04/20/first-blog/","title":"周报"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>周报 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4-17%E5%91%A8%E6%8A%A5"><span class="nav-number">1.</span> <span class="nav-text">4.17周报</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB"><span class="nav-number">1.1.</span> <span class="nav-text">文献阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.2.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E6%8E%A8%E7%90%86"><span class="nav-number">1.1.3.</span> <span class="nav-text">预推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel%E4%BC%98%E5%8C%96"><span class="nav-number">1.1.4.</span> <span class="nav-text">Kernel优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E6%8A%BD%E8%B1%A1"><span class="nav-number">1.1.5.</span> <span class="nav-text">后端抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94"><span class="nav-number">1.1.6.</span> <span class="nav-text">结果对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">论文复现</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </aside>
+  <div class="sidebar-dimmer"></div>
 
-      <div class="outer">
-        <section id="main"><article id="post-first-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/20/first-blog/" class="article-date">
-  <time class="dt-published" datetime="2022-04-20T08:01:41.000Z" itemprop="datePublished">2022-04-20</time>
-</a>
+
+    </header>
+
     
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      周报
-    </h1>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/first-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="周报 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          周报
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
+
+      <time title="Created: 2022-04-20 16:01:41 / Modified: 16:56:24" itemprop="dateCreated datePublished" datetime="2022-04-20T16:01:41+08:00">2022-04-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
         <h1 id="4-17周报"><a href="#4-17周报" class="headerlink" title="4.17周报"></a>4.17周报</h1><h2 id="文献阅读"><a href="#文献阅读" class="headerlink" title="文献阅读"></a>文献阅读</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p><font face="宋体">神经网络底层通过推理引擎构建算子并加速并行计算的效率,，目前主流框架的缺点主要包括：</font></p>
 <ul>
 <li><font face="宋体">模型兼容性：</font><font face="Times New Roman">Tensorflow,Pytorch,Caffe,CNTK,MXNet</font><font face="宋体">等模型和算子间不兼容，扩展性较差。</font></li>
@@ -115,7 +224,7 @@
 <li><font face="宋体">资源调度：围绕核心算法分配线程和进程，互斥锁和消息队列间的任务窃取还存在优化空间，调度优化可提升计算性能，同时降低模型时间复杂度和空间复杂度。</font></li>
 </ul>
 <p><font face="宋体">基于此，阿里云提出了</font><font face="Times New Roman">MNN</font><font face="宋体">架构加速引擎推理和端侧部署效率</font></p>
-<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="https://github.com/danzunzhe/sourcepage/blob/master/image-20220416153252693.png" alt="image-20220416153252693"></p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="https://raw.githubusercontent.com/danzunzhe/sourcepage/master/image-20220416153252693.png" alt="image-20220416153252693"></p>
 <p><font face="宋体">上图为</font><font face="Times New Roman">MNN</font><font face="宋体">的架构，分为离线和在线的部分。离线部分将模型剪枝、压缩和量化后转出</font><font face="Times New Roman">mnn</font><font face="宋体">文件。在线推理分为：预推理，</font><font face="Times New Roman">kernel</font></p>
 <p><font face="宋体">优化和后端抽象。每个算子做推理时结合多算子和后端信息做成本评估，从方案池中找出最优方案。针对每个方案进行</font><font face="Times New Roman">kernet</font></p>
 <p><font face="宋体">级别的优化。加入</font><font face="Times New Roman">SIMD</font><font face="宋体">。后端抽象后就可以支持各类后端。</font></p>
@@ -171,130 +280,73 @@
 
 <p><font face="宋体">机器学习库采用</font><font face="Times New Roman">Pytorch。</font><font face="宋体">采用</font><font face="Times New Roman">MNN</font><font face="宋体">和</font><font face="Times New Roman">TensorRT</font><font face="宋体">作为引擎搭载框架进行推理。</font><font face="宋体">对比结果如上图。测试平台为</font><font face="Times New Roman">GTX1050。</font><font face="宋体">对比发现基于</font><font face="Times New Roman">GPU</font><font face="宋体">的加速推理</font><font face="Times New Roman">MNN</font><font face="宋体">推理引擎具有明显优势。</font></p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/20/first-blog/" data-id="cl27c07300000xwvh69hohw15" data-title="周报" class="article-share-link">Share</a>
-      
-      
-      
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/20/test-my-site/" rel="prev" title="test_my_site">
+                  <i class="fa fa-chevron-left"></i> test_my_site
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/04/20/test-my-site-1/" rel="next" title="test_my_site">
+                  test_my_site <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/04/20/test-my-site-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          test_my_site
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/04/20/test-my-site/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">test_my_site</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/04/20/test-my-site-1/">test_my_site</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/20/first-blog/">周报</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/20/test-my-site/">test_my_site</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/20/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
 
     </div>
-    <nav id="mobile-nav">
+  </footer>
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
 </body>
 </html>
