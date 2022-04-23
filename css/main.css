@@ -2696,23 +2696,30 @@ mjx-container[display='true'] + br {
     padding: 10px 12px;
   }
 }
+.fireworks {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+}
 body {
   background: url("/images/background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   background-position: 100% 100%;
 }
 .content-wrap {
-  opacity: 0.8;
+  opacity: 0.5;
 }
-.main-inner .post-block {
-  background: rgba(255,255,255,0.7) none repeat scroll !important;
+.main-inner {
+  opacity: 0.95;
 }
 .sidebar-inner {
   background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
 .header-inner {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.1);
 }
 .popup {
   opacity: 0.8;
