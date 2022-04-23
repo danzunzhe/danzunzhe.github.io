@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%A8%E6%8A%A5"><span class="nav-number">1.</span> <span class="nav-text">4.10周报</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB"><span class="nav-number">1.1.</span> <span class="nav-text">文献阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">参考文献</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">论文复现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">1.2.2.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4-10%E5%91%A8%E6%8A%A5"><span class="nav-number">1.</span> <span class="nav-text">4.10周报</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB"><span class="nav-number">1.1.</span> <span class="nav-text">文献阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">论文复现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">1.2.2.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -255,28 +255,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="周报">4.10周报</h1>
-<span id="more"></span>
-<h2 id="文献阅读">文献阅读</h2>
-<p><font face="Times New Roman">Ganin</font><font face="宋体">等人在神经网络中加入了对抗机制，即领域对抗网络</font><font face="Times New Roman">DANN</font><font face="宋体">该网络直接利用生成对抗网络特点，在训练过程中，使得领域判别器和特征提取器相互对抗。特征提取器既要准确分类，又要混淆目标域和源域，使得领域判别器无法对源域和目标域进行准确判别，以此学习到领域不变特征。</font></p>
-<p><font face="宋体">对于训练目标,</font><font face="Times New Roman">DANN</font><font face="宋体">首先通过最小化分类损失与特征提取器损失来优化特征提取器</font><span class="math inline">\(G_{f}\)</span><font face="宋体">和分类器</font><span class="math inline">\(G_{y}\)</span><font face="宋体">的参数</font><span class="math inline">\(\theta_{f}\)</span><font face="宋体">和</font><span class="math inline">\(\theta_{y}\)</span>: <span class="math display">\[
+        <h1 id="4-10周报"><a href="#4-10周报" class="headerlink" title="4.10周报"></a>4.10周报</h1><span id="more"></span>
+<h2 id="文献阅读"><a href="#文献阅读" class="headerlink" title="文献阅读"></a>文献阅读</h2><font face="Times New Roman">Ganin</font><font face="宋体">等人在神经网络中加入了对抗机制，即领域对抗网络</font><font face="Times New Roman">DANN</font><font face="宋体">该网络直接利用生成对抗网络特点，在训练过程中，使得领域判别器和特征提取器相互对抗。特征提取器既要准确分类，又要混淆目标域和源域，使得领域判别器无法对源域和目标域进行准确判别，以此学习到领域不变特征。</font>
+
+<font face="宋体">对于训练目标,</font><font face="Times New Roman">DANN</font><font face="宋体">首先通过最小化分类损失与特征提取器损失来优化特征提取器</font>$G_{f}$<font face="宋体">和分类器</font>$G_{y}$<font face="宋体">的参数</font>$\theta_{f}$<font face="宋体">和</font>$\theta_{y}$:
+$$
 (\hat\theta_{f},\hat\theta_{f})=\mathop{\arg\min}\limits_{\theta}E(\theta_{f},\theta_{y},\theta_{d})
-\]</span> <font face="宋体">然后通过最大化领域判别器</font><span class="math inline">\(G_{d}\)</span><font face="宋体">的损失来优化其参数</font><span class="math inline">\(\theta_{d}\)</span>: <span class="math display">\[
+$$
+<font face="宋体">然后通过最大化领域判别器</font>$G_{d}$<font face="宋体">的损失来优化其参数</font>$\theta_{d}$:
+$$
 (\hat\theta_{d})=\mathop{\arg\max}\limits_{\theta_{d}}E(\theta_{f},\theta_{y},\theta_{d})
-\]</span> <font face="宋体">为了实现领域对抗损失最大化，引入一种梯度反转层到网络的反向传播中。在前向传播中，反转层为一个恒等映射:</font> <span class="math display">\[
+$$
+<font face="宋体">为了实现领域对抗损失最大化，引入一种梯度反转层到网络的反向传播中。在前向传播中，反转层为一个恒等映射:</font>
+$$
 R_{\lambda}(x)=x
-\]</span> <font face="宋体">在反向传播中，通过乘以一个负单位将梯度进行反转:</font> <span class="math display">\[
+$$
+<font face="宋体">在反向传播中，通过乘以一个负单位将梯度进行反转:</font>
+$$
 \frac{dR_{\lambda}}{dx}=-\lambda I
-\]</span> <font face="宋体">上述两个训练过程将被合并到一个目标函数中:</font> <span class="math display">\[
-E(\theta_{y},\theta_{y^{&#39;}},\theta_{d})=\sum_{x_{i}\in D_{s}}L_{y}(G_{y}(G_{f}(x_{i})),y_{i})-\lambda\sum_{x_{i}\in D_{s}\bigcup D_{t}}L_{d}(G_{d}(G_{f}(x_{i})),d_{i})
-\]</span> <font face="宋体">其中</font><span class="math inline">\(L_{d}\)</span><font face="宋体">为判别损失，</font><span class="math inline">\(L_{y}\)</span><font face="宋体">为分类损失。</font><span class="math inline">\(d_{i}\)</span><font face="宋体">为领域标签。当数据来自源域时</font><span class="math inline">\(d_{i}=0\)</span><font face="宋体">；否则</font><span class="math inline">\(d_{i}=1\)</span>。</p>
-<h3 id="参考文献">参考文献</h3>
-<p><font face="Times New Roman">Ganin Y, Ustinova E, Ajakan H, et al. Domain-adversarial training of neural networks[J]. The journal of machine learning research, 2016, 17(1): 2096-2030.</font></p>
-<h2 id="论文复现">论文复现</h2>
-<h3 id="代码实现">代码实现</h3>
-<p><font face="宋体">模拟梯度反转回传过程，特征提取器最后特征层加入</font><font face="Times New Roman">t-SNE</font><font face="宋体">可视化，进行源域和目标域的混淆观察。</font></p>
-<h3 id="结果">结果</h3>
-<p><font face="宋体">复现单源域与单目标域结果，选取6个被试做6折交叉验证，平均准确率为87.15%，优于传统的</font><font face="Times New Roman">TCA、BCA。</font></p>
+$$
+<font face="宋体">上述两个训练过程将被合并到一个目标函数中:</font>
+$$
+E(\theta_{y},\theta_{y^{'}},\theta_{d})=\sum_{x_{i}\in D_{s}}L_{y}(G_{y}(G_{f}(x_{i})),y_{i})-\lambda\sum_{x_{i}\in D_{s}\bigcup D_{t}}L_{d}(G_{d}(G_{f}(x_{i})),d_{i})
+$$
+<font face="宋体">其中</font>$L_{d}$<font face="宋体">为判别损失，</font>$L_{y}$<font face="宋体">为分类损失。</font>$d_{i}$<font face="宋体">为领域标签。当数据来自源域时</font>$d_{i}=0$<font face="宋体">；否则</font>$d_{i}=1$。
+
+### 参考文献
+
+<font face="Times New Roman">Ganin Y, Ustinova E, Ajakan H, et al. Domain-adversarial training of neural networks[J]. The journal of machine learning research, 2016, 17(1): 2096-2030.</font>
+
+<h2 id="论文复现"><a href="#论文复现" class="headerlink" title="论文复现"></a>论文复现</h2><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><font face="宋体">模拟梯度反转回传过程，特征提取器最后特征层加入</font><font face="Times New Roman">t-SNE</font><font face="宋体">可视化，进行源域和目标域的混淆观察。</font>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><font face="宋体">复现单源域与单目标域结果，选取6个被试做6折交叉验证，平均准确率为87.15%，优于传统的</font><font face="Times New Roman">TCA、BCA。</font>
 
     </div>
 
