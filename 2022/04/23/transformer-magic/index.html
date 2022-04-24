@@ -22,28 +22,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="4.10周报">
+    <meta name="description" content="Transformer是目前NLP中的主流模型，Bert、GPT的backbone网络均是基于Transformer。随后在逐步在CV领域得到广泛应用。其中近两年顶会中出现一些提升Transformer效率的魔改模型。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4.10周报">
-<meta property="og:url" content="http://example.com/2022/04/20/second-blog/index.html">
+<meta property="og:title" content="Transformer及其改进">
+<meta property="og:url" content="http://example.com/2022/04/23/transformer-magic/index.html">
 <meta property="og:site_name" content="Danzunzhe">
-<meta property="og:description" content="4.10周报">
+<meta property="og:description" content="Transformer是目前NLP中的主流模型，Bert、GPT的backbone网络均是基于Transformer。随后在逐步在CV领域得到广泛应用。其中近两年顶会中出现一些提升Transformer效率的魔改模型。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-20T12:48:29.000Z">
-<meta property="article:modified_time" content="2022-04-21T09:12:34.311Z">
+<meta property="og:image" content="http://example.com/2022/04/23/transformer-magic/1.png">
+<meta property="og:image" content="http://example.com/2022/04/23/transformer-magic/3.png">
+<meta property="og:image" content="http://example.com/2022/04/23/transformer-magic/2.png">
+<meta property="article:published_time" content="2022-04-23T13:58:23.000Z">
+<meta property="article:modified_time" content="2022-04-24T02:58:09.040Z">
 <meta property="article:author" content="Danzunzhe">
-<meta property="article:tag" content="-&quot;周报&quot;">
+<meta property="article:tag" content="Transformer，注意力机制">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/04/23/transformer-magic/1.png">
 
 
-<link rel="canonical" href="http://example.com/2022/04/20/second-blog/">
+<link rel="canonical" href="http://example.com/2022/04/23/transformer-magic/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/04/20/second-blog/","path":"2022/04/20/second-blog/","title":"4.10周报"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/04/23/transformer-magic/","path":"2022/04/23/transformer-magic/","title":"Transformer及其改进"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>4.10周报 | Danzunzhe</title>
+<title>Transformer及其改进 | Danzunzhe</title>
   
 
 
@@ -120,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%A8%E6%8A%A5"><span class="nav-number">1.</span> <span class="nav-text">4.10周报</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB"><span class="nav-number">1.1.</span> <span class="nav-text">文献阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">参考文献</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">论文复现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">1.2.2.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E7%A8%80%E7%96%8F%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9F%A9%E9%98%B5%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">针对稀疏注意力矩阵优化问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E5%92%8Ctransformer%E7%9A%84%E8%9E%8D%E5%90%88"><span class="nav-number">2.</span> <span class="nav-text">卷积和Transformer的融合</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,7 +199,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/second-blog/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/23/transformer-magic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -208,12 +212,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="4.10周报 | Danzunzhe">
+      <meta itemprop="name" content="Transformer及其改进 | Danzunzhe">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          4.10周报
+          Transformer及其改进
         </h1>
 
         <div class="post-meta-container">
@@ -224,14 +228,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-04-20 20:48:29" itemprop="dateCreated datePublished" datetime="2022-04-20T20:48:29+08:00">2022-04-20</time>
+      <time title="创建时间：2022-04-23 21:58:23" itemprop="dateCreated datePublished" datetime="2022-04-23T21:58:23+08:00">2022-04-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-21 17:12:34" itemprop="dateModified" datetime="2022-04-21T17:12:34+08:00">2022-04-21</time>
+      <time title="修改时间：2022-04-24 10:58:09" itemprop="dateModified" datetime="2022-04-24T10:58:09+08:00">2022-04-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,7 +243,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%91%A8%E6%8A%A5/" itemprop="url" rel="index"><span itemprop="name">-"周报"</span></a>
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%91%A8%E6%8A%A5/" itemprop="url" rel="index"><span itemprop="name">周报</span></a>
         </span>
     </span>
 
@@ -255,28 +263,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="周报">4.10周报</h1>
+        <p>Transformer是目前NLP中的主流模型，Bert、GPT的backbone网络均是基于Transformer。随后在逐步在CV领域得到广泛应用。其中近两年顶会中出现一些提升Transformer效率的魔改模型。</p>
 <span id="more"></span>
-<h2 id="文献阅读">文献阅读</h2>
-<p><font face="Times New Roman">Ganin</font><font face="宋体">等人在神经网络中加入了对抗机制，即领域对抗网络</font><font face="Times New Roman">DANN</font><font face="宋体">该网络直接利用生成对抗网络特点，在训练过程中，使得领域判别器和特征提取器相互对抗。特征提取器既要准确分类，又要混淆目标域和源域，使得领域判别器无法对源域和目标域进行准确判别，以此学习到领域不变特征。</font></p>
-<p><font face="宋体">对于训练目标,</font><font face="Times New Roman">DANN</font><font face="宋体">首先通过最小化分类损失与特征提取器损失来优化特征提取器</font><span class="math inline">\(G_{f}\)</span><font face="宋体">和分类器</font><span class="math inline">\(G_{y}\)</span><font face="宋体">的参数</font><span class="math inline">\(\theta_{f}\)</span><font face="宋体">和</font><span class="math inline">\(\theta_{y}\)</span>: <span class="math display">\[
-(\hat\theta_{f},\hat\theta_{f})=\mathop{\arg\min}\limits_{\theta}E(\theta_{f},\theta_{y},\theta_{d})
-\]</span> <font face="宋体">然后通过最大化领域判别器</font><span class="math inline">\(G_{d}\)</span><font face="宋体">的损失来优化其参数</font><span class="math inline">\(\theta_{d}\)</span>: <span class="math display">\[
-(\hat\theta_{d})=\mathop{\arg\max}\limits_{\theta_{d}}E(\theta_{f},\theta_{y},\theta_{d})
-\]</span> <font face="宋体">为了实现领域对抗损失最大化，引入一种梯度反转层到网络的反向传播中。在前向传播中，反转层为一个恒等映射:</font> <span class="math display">\[
-R_{\lambda}(x)=x
-\]</span> <font face="宋体">在反向传播中，通过乘以一个负单位将梯度进行反转:</font> <span class="math display">\[
-\frac{dR_{\lambda}}{dx}=-\lambda I
-\]</span> <font face="宋体">上述两个训练过程将被合并到一个目标函数中:</font> <span class="math display">\[
-E(\theta_{y},\theta_{y^{&#39;}},\theta_{d})=\sum_{x_{i}\in D_{s}}L_{y}(G_{y}(G_{f}(x_{i})),y_{i})-\lambda\sum_{x_{i}\in D_{s}\bigcup D_{t}}L_{d}(G_{d}(G_{f}(x_{i})),d_{i})
-\]</span> <font face="宋体">其中</font><span class="math inline">\(L_{d}\)</span><font face="宋体">为判别损失，</font><span class="math inline">\(L_{y}\)</span><font face="宋体">为分类损失。</font><span class="math inline">\(d_{i}\)</span><font face="宋体">为领域标签。当数据来自源域时</font><span class="math inline">\(d_{i}=0\)</span><font face="宋体">；否则</font><span class="math inline">\(d_{i}=1\)</span>。</p>
-<h3 id="参考文献">参考文献</h3>
-<p><font face="Times New Roman">Ganin Y, Ustinova E, Ajakan H, et al. Domain-adversarial training of neural networks[J]. The journal of machine learning research, 2016, 17(1): 2096-2030.</font></p>
-<h2 id="论文复现">论文复现</h2>
-<h3 id="代码实现">代码实现</h3>
-<p><font face="宋体">模拟梯度反转回传过程，特征提取器最后特征层加入</font><font face="Times New Roman">t-SNE</font><font face="宋体">可视化，进行源域和目标域的混淆观察。</font></p>
-<h3 id="结果">结果</h3>
-<p><font face="宋体">复现单源域与单目标域结果，选取6个被试做6折交叉验证，平均准确率为87.15%，优于传统的</font><font face="Times New Roman">TCA、BCA。</font></p>
+<h3 id="针对稀疏注意力矩阵优化问题">针对稀疏注意力矩阵优化问题</h3>
+<ul>
+<li><strong><em>LITE TRANSFORMER WITH LONG-SHORT RANGE ATTENTION（ICLR 2020）</em></strong>提出了另一个融合卷积和Attention的工作。通过Attention的热力图发现，Attention矩阵的结构具有稀疏性，并且对角线附近的分值较高。前者表明Attention会学习一些global的稀疏关系，后者表示Attention会学习local的关系。本文提出，可以让原来的Transformer专注于提取全局关系，而增加一个卷积模块，并行提取局部关系。FFN的输出会被分成两半，一半输入到原来的Transfomer中（提取global信息），另一半输入到一个卷积层（提取local信息），这样Transformer部分的计算复杂度缩小了一半。同时让卷积部分可以提取local信息，让Transformer部分专注于提取global信息。从下图中的c也可以看出，增加了卷积模块后，Transformer的attention矩阵没有了对角线附近的local信息提取，而是侧重于global信息的提取。</li>
+</ul>
+<div>
+<center>
+<img src="/2022/04/23/transformer-magic/1.png" width="800"><br>
+</center>
+</div>
+<ul>
+<li><p><strong><em>Linformer: Self-Attention with Linear Complexity（2020）</em></strong>提出了一种线性时间复杂度和空间复杂度的Transformer模型。首先，本文利用奇异值分解对Roberta中各个层的Attention矩阵进行分析，发现特征值是非常明显的长尾分布，值比较大的特征值只有几个，大部分特征值都很小。这表明，只需要用少数的最大的特征值就能近似还原Attention矩阵中的大部分信息。此外，越接近输出的层，前128、512个奇异值的和占比越大。分析结果如下图。</p>
+<div>
+<center>
+<img src="/2022/04/23/transformer-magic/3.png" width="800"><br>
+</center>
+</div>
+<p>一种方法是使用SVD分解，取前k个最大的特征值对应的特征向量组成Attention矩阵的近似，如下： <span class="math display">\[
+\left.P\approx P_{low}=\sum_{i=1}^{k}\sigma_{i}u_{i}v_{i}^{T}=\begin{pmatrix} u_{1}, &amp; ..., &amp; u_{k}\end{pmatrix} diag\left\{\sigma_{1},...,\sigma_{k}\right\}\begin{pmatrix} v_{1} \\ \vdots\\v_{k}\end{pmatrix} \right\}
+\]</span> 但是这种方法的问题在于需要进行额外的SVD计算，增加的计算复杂度。因此，本文提出将K和V进行一步映射后再进行Attention。将原来的Attention计算方法使用两个映射E、F转换成如下形式： <span class="math display">\[
+\underbrace{softmax[\frac{QW_{i}^{Q}(KW_{i}^{K})^{T}}{\sqrt{d_{k}}}]}_{P}\rightarrow\underbrace{softmax(\frac{QW_{i}^{Q}(E_{i}KW_{i}^{K})^{T}}{\sqrt{d_{k}}})}_{\hat{P}:n\times k}\cdot \underbrace{F_{i}VW_{i}^{V}}_{k\times d}
+\]</span> 其中E、F分别将K、V从[T, d]映射拆成[k, d]。这样计算复杂度从原来的O(T<em>T)下降为O(k</em>T)，当k远小于T的时候即近似为线性时间和空间复杂度。</p></li>
+</ul>
+<h3 id="卷积和transformer的融合">卷积和Transformer的融合</h3>
+<ul>
+<li><strong><em>Conformer: Convolution-augmented Transformer for Speech Recognition（2020）</em></strong>提出用卷积来提升Transformer效果，融合卷积提取局部信息的优势和Transformer提取全局信息的优势。具体的做法也比较直观，利用一层Multi-head Attention加上一层卷积的嵌套方式来实现，具体结构如下图。</li>
+</ul>
+<div>
+<center>
+<img src="/2022/04/23/transformer-magic/2.png" width="600"><br>
+</center>
+</div>
 
     </div>
 
@@ -286,21 +305,18 @@ E(\theta_{y},\theta_{y^{&#39;}},\theta_{d})=\sum_{x_{i}\in D_{s}}L_{y}(G_{y}(G_{
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%91%A8%E6%8A%A5/" rel="tag"># -"周报"</a>
+              <a href="/tags/Transformer%EF%BC%8C%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" rel="tag"># Transformer，注意力机制</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/04/20/first-blog/" rel="prev" title="4.17周报">
-                  <i class="fa fa-chevron-left"></i> 4.17周报
+                <a href="/2022/04/21/lc4/" rel="prev" title="Leetcode-4 寻找两个正序数组的中位数">
+                  <i class="fa fa-chevron-left"></i> Leetcode-4 寻找两个正序数组的中位数
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/04/21/paper/" rel="next" title="周报汇总">
-                  周报汇总 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
